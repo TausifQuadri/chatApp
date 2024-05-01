@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Friend</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .form-inline .form-group {
+      margin-right: 10px;
+    }
+    .friend-card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .friend-card:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Add Friend</h2>
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" id="searchFriend" placeholder="Search for friends">
+    </div>
+    <button class="btn btn-primary" onclick="searchFriends()">Search</button>
+  </form>
+  <div id="searchResults">
+    <!-- Dummy search results -->
+    <div class="friend-card" onclick="addFriend('Friend 1')">Friend 1</div>
+    <div class="friend-card" onclick="addFriend('Friend 2')">Friend 2</div>
+    <div class="friend-card" onclick="addFriend('Friend 3')">Friend 3</div>
+  </div>
+</div>
+
+<script>
+  function searchFriends() {
+    var searchTerm = document.getElementById('searchFriend').value;
+    // Dummy search function
+    alert('Searching for: ' + searchTerm);
+    // Dummy search results
+    document.getElementById('searchResults').innerHTML = `
+      <div class="friend-card" onclick="addFriend('Friend 4')">Friend 4</div>
+      <div class="friend-card" onclick="addFriend('Friend 5')">Friend 5</div>
+      <div class="friend-card" onclick="addFriend('Friend 6')">Friend 6</div>
+    `;
+  }
+
+  function addFriend(friendName) {
+    alert('Added ' + friendName + ' as a friend!');
+    // Dummy function to simulate adding friend
+  }
+</script>
+
+</body>
+</html>
